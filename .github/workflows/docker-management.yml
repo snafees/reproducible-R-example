@@ -50,7 +50,7 @@ jobs:
           # Where's the Dockerfile to build this image from?
           file: docker/Dockerfile
           # What should this docker image be called once we are done?
-          tags: snafees/reproducible-R-example
+          tags: snafees/reproducible-r
 
       # Login to Dockerhub
       - name: Login to DockerHub
@@ -68,4 +68,4 @@ jobs:
       # This has an if statement so it will only run it we set dockerhubpush to
       # something not `false` which is the default
         if: ${{ github.event.inputs.dockerhubpush != 'false' }}
-        run: docker push snafees/reproducible-R-example
+        run: docker push snafees/reproducible-r
